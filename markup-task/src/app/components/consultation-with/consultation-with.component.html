@@ -1,0 +1,28 @@
+<div class="stepper-container">
+  <app-stepper *ngIf="stepper" [stepper]="stepper"></app-stepper>
+</div>
+<div>
+  <div class="inner-container">
+    <div class="title">
+      {{'consultationWith' | translate}}
+    </div>
+    <div class="container flex dir-col">
+      <div class="radio-button-container" [class.active]="checkedObject.private"  (click)="check(ConsultationWith.Private)">
+        <mat-checkbox [(ngModel)]="checkedObject.private">{{'privateDoctorConsultation' | translate}}</mat-checkbox>
+      </div>
+      <div class="radio-button-container" [class.active]="checkedObject.specialist" (click)="check(ConsultationWith.Specialist)">
+        <mat-checkbox [(ngModel)]="checkedObject.specialist" [disabled]="disableRemote">{{'specialistConsultation' | translate}}</mat-checkbox>
+      </div>
+      <div class="radio-button-container" [class.active]="checkedObject.machinery"  (click)="check(ConsultationWith.Machinery)">
+        <mat-checkbox [(ngModel)]="checkedObject.machinery" [disabled]="disableRemote">
+          <h3>{{'machinery' | translate}}</h3>
+          <div class="radio-subtitle">
+            {{'machineryAdditionalInfo' | translate}}
+          </div>
+        </mat-checkbox>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer [width]="'570px'" (backEvent)="onBack()" [disableNext]="checkedWith === null" (nextEvent)="onNext()"></app-footer>

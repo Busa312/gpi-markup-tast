@@ -1,0 +1,46 @@
+<div class="stepper-container">
+  <app-stepper *ngIf="stepper" [stepper]="stepper"></app-stepper>
+</div>
+
+<div>
+  <div class="inner-container">
+    <div class="title">{{ 'chooseHospital' | translate }}</div>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>
+        {{'chooseCity' | translate}}
+      </mat-label>
+      <mat-select [formControl]="cityForm">
+        <mat-option *ngFor="let city of cities" [value]="city">{{city | translate}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <p class="subtitle">{{'chooseDesiredClinic' | translate}}</p>
+    <div class="search-input">
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>{{'searchHospital' | translate}}</mat-label>
+        <input [formControl]="searchForm" type="text" matInput >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <div class="radio-button-container flex jc-sb ai-c hospital-container" [class.active]="chosenHospitalId === hospital.id" (click)="chosenHospitalId=hospital.id" *ngFor="let hospital of hospitals">
+        <div class="flex ai-c" >
+          <div class="icon">
+          </div>
+          <div class="radio-label">
+            <h3>{{ isEn? hospital.nameEn : hospital.name }}</h3>
+            <div class="radio-subtitle">{{isEn? hospital.addressEn : hospital.address}}</div>
+          </div>
+        </div>
+        <mat-radio-button [checked]="chosenHospitalId === hospital.id">
+        </mat-radio-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<app-footer [width]="'570px'" (nextEvent)="onNext()"  [disableNext]="!chosenHospitalId" (backEvent)="onBack()"></app-footer>

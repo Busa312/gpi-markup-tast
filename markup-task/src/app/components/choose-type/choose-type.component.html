@@ -1,0 +1,51 @@
+<div class="stepper-container">
+  <app-stepper *ngIf="stepper" [stepper]="stepper"></app-stepper>
+</div>
+<div>
+  <div class="inner-container">
+    <div class="title">
+      {{'chooseConsultationType' | translate}}
+    </div>
+
+    <div>
+      <mat-radio-group class="container flex dir-col"  [(ngModel)]="consultationType">
+        <div class="radio-button-container flex jc-sb ai-c" (click)="consultationType = ConsultationTypes.Phone" [class.active]="consultationType === ConsultationTypes.Phone">
+          <div class="icon-text flex ai-c">
+            <div class="icon">
+              <mat-icon>phone_in_talk</mat-icon>
+            </div>
+            {{'mobileConsultation' | translate}}
+          </div>
+          <mat-radio-button [value]="ConsultationTypes.Phone">
+          </mat-radio-button>
+        </div>
+        <div class="radio-button-container flex jc-sb ai-c" (click)="consultationType = ConsultationTypes.Visit" [class.active]="consultationType === ConsultationTypes.Visit">
+          <div class="icon-text flex ai-c">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27.418" height="27.418" viewBox="0 0 27.418 27.418">
+                <path id="pharmacy_1_" data-name="pharmacy (1)" d="M13.509,27.018a4.5,4.5,0,0,1-4.5-4.5v-4.5H4.5a4.5,4.5,0,0,1,0-9.006h4.5V4.5a4.5,4.5,0,1,1,9.006,0v4.5h4.5a4.5,4.5,0,0,1,0,9.006h-4.5v4.5A4.5,4.5,0,0,1,13.509,27.018ZM4.5,11.257a2.251,2.251,0,1,0,0,4.5h5.629a1.126,1.126,0,0,1,1.126,1.126v5.629a2.251,2.251,0,1,0,4.5,0V16.886a1.126,1.126,0,0,1,1.126-1.126h5.629a2.251,2.251,0,1,0,0-4.5H16.886a1.126,1.126,0,0,1-1.126-1.126V4.5a2.251,2.251,0,1,0-4.5,0v5.629a1.126,1.126,0,0,1-1.126,1.126Z" transform="translate(0.2 0.2)" fill="#292562" stroke="#27235d" stroke-width="0.4"/>
+              </svg>
+            </div>
+            {{'visitClinic' | translate}}
+          </div>
+          <mat-radio-button [value]="ConsultationTypes.Visit">
+          </mat-radio-button>
+        </div>
+        <div class="radio-button-container flex jc-sb ai-c" (click)="consultationType = ConsultationTypes.Video" [class.active]="consultationType === ConsultationTypes.Video">
+          <div class="icon-text flex ai-c">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.403" height="14.401" viewBox="0 0 21.403 14.401">
+                <path id="video-camera-alt_1_" data-name="video-camera-alt (1)" d="M20.043,6.221a1.724,1.724,0,0,0-1.818.165.883.883,0,0,0-.1.084L16.591,8.021A4.367,4.367,0,0,0,12.252,4H4.376A4.379,4.379,0,0,0,0,8.376v5.251A4.381,4.381,0,0,0,4.376,18h7.876a4.367,4.367,0,0,0,4.342-4.049l1.537,1.535a1.031,1.031,0,0,0,.094.081A1.737,1.737,0,0,0,21,14.179v-6.4a1.726,1.726,0,0,0-.96-1.553ZM12.252,16.252H4.376A2.629,2.629,0,0,1,1.75,13.626V8.376A2.629,2.629,0,0,1,4.376,5.75h7.876a2.629,2.629,0,0,1,2.625,2.625v5.251A2.629,2.629,0,0,1,12.252,16.252Zm4.376-4.74V10.471l2.625-2.65.022,6.334L16.627,11.51Z" transform="translate(0.2 -3.801)" fill="#292562" stroke="#292562" stroke-width="0.4"/>
+              </svg>
+            </div>
+            {{'videoConsultation' | translate}}
+          </div>
+          <mat-radio-button [value]="ConsultationTypes.Video">
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </div>
+  </div>
+</div>
+<app-footer [width]="'570px'" [disableNext]="consultationType === null" (nextEvent)="onNext()" (backEvent)="onBack()">
+</app-footer>

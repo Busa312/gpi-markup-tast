@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49.912" height="41.994" viewBox="0 0 49.912 41.994">
+  <defs>
+    <filter id="Rectangle_2184" x="0" y="2" width="49.912" height="39.994" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#161616" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_2187" x="0" y="0" width="49.912" height="39.994" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#161616" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_5601" data-name="Group 5601" transform="translate(-1571.936 -23.383)">
+    <g transform="matrix(1, 0, 0, 1, 1571.94, 23.38)" filter="url(#Rectangle_2184)">
+      <rect id="Rectangle_2184-2" data-name="Rectangle 2184" width="31.912" height="21.994" rx="3" transform="translate(9 9)" fill="#fff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1571.94, 23.38)" filter="url(#Rectangle_2187)">
+      <rect id="Rectangle_2187-2" data-name="Rectangle 2187" width="31.912" height="21.994" rx="3" transform="translate(9 9)" fill="#fff"/>
+    </g>
+    <rect id="Rectangle_2183" data-name="Rectangle 2183" width="31.912" height="21.994" rx="3" transform="translate(1580.936 32.383)" fill="#fff"/>
+    <path id="Path_10242" data-name="Path 10242" d="M13.714,13.748H0V9.166H13.714V.313h4.571V9.166H32v4.583H18.286l.01,8.543H13.728Z" transform="translate(1580.869 32.064)" fill="#f93939" fill-rule="evenodd"/>
+    <path id="Path_10243" data-name="Path 10243" d="M20.734,15.747H19.212v1.527h1.521V18.8h1.521V17.275h1.521V15.747H22.255V14.22H20.734Zm0-12.22H19.212V5.055h1.521V6.582h1.521V5.055h1.521V3.527H22.255V2H20.734Zm-15.212,0H4V5.055H5.521V6.582H7.042V5.055H8.564V3.527H7.042V2H5.521Zm0,12.22H4v1.527H5.521V18.8H7.042V17.275H8.564V15.747H7.042V14.22H5.521Z" transform="translate(1582.98 33.119)" fill="#f93939" fill-rule="evenodd"/>
+  </g>
+</svg>

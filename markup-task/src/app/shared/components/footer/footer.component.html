@@ -1,0 +1,9 @@
+<div class="footer" [class.scrollable]="zeroOpacity">
+  <div class="inner-footer flex jc-sb ai-c" [ngStyle]="{'max-width': this.width}">
+    <button mat-raised-button [disabled]="disableBack"  (click)="onBack()">
+      <mat-icon>keyboard_backspace</mat-icon>
+      {{'back' | translate}}
+    </button>
+    <button mat-raised-button [disabled]="disableNext" color="accent" (click)="onNext()">{{ nextText | translate }}</button>
+  </div>
+</div>

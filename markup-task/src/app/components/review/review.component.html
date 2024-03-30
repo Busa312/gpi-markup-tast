@@ -1,0 +1,62 @@
+<div class="stepper-container" *ngIf="notSubmitted">
+  <app-stepper *ngIf="stepper" [stepper]="stepper"></app-stepper>
+</div>
+<div>
+  <div class="inner-container">
+    <div class="title" *ngIf="notSubmitted">
+      {{'checkBooking' | translate}}
+    </div>
+    <div class="submitted flex dir-col jc-c ai-c" *ngIf="!notSubmitted">
+      <div class="submit-icon flex jc-c ai-c">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" viewBox="0 0 24 19">
+          <g id="Group_4683" data-name="Group 4683" transform="translate(0)">
+            <path id="check-bold_1_" data-name="check-bold (1)" d="M10.667,23.88,2.79,16.287l3.59-3.46,4.288,4.145L23.2,4.88l3.59,3.46Z" transform="translate(-2.79 -4.88)" fill="#22a336"/>
+          </g>
+        </svg>
+      </div>
+      <div class="main-text">{{'submitMain' | translate}}</div>
+      <div class="sub-text">{{'submitSub' | translate}}</div>
+      <div class="separator"></div>
+    </div>
+    <div>
+      <div class="booked-review" *ngFor="let slot of bookedSlots">
+        <div class="subtitle">{{'doctor' | translate}}</div>
+        <div class="review-text">
+          {{isEn? slot.doctor.nameEn : slot.doctor.name}} · {{slot.doctor.subtitle | translate}}
+        </div>
+        <div class="subtitle">{{'hospital' | translate}}</div>
+        <div class="address">
+          <div class="review-text">{{isEn? hospital.nameEn : hospital.name}}</div>
+          <div class="review-text">{{isEn? hospital.addressEn : hospital.address}}</div>
+        </div>
+
+        <div class="visit flex ai-c">
+          <div class="visit-icon flex jc-c ai-c">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+              <path id="calendar-today" d="M7,10h5v5H7m12,4H5V8H19m0-5H18V1H16V3H8V1H6V3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5A2,2,0,0,0,19,3Z" transform="translate(-3 -1)" fill="#ed1c7c"/>
+            </svg>
+          </div>
+          <div>
+            <div class="subtitle">{{'visitTime' | translate}}</div>
+            <div class="visit-slot">{{slot.slot}} {{slot.date.getDate()}} {{monthsShort[slot.date.getMonth()] | translate}}</div>
+          </div>
+        </div>
+        <div class="separator"></div>
+      </div>
+
+      <div class="subtitle">{{'insured' | translate}}</div>
+      <div class="review-text">{{isEn? insured.nameEn : insured.name}} {{insured.insuranceNumber}}</div>
+      <div class="subtitle">{{'mobilePhone' | translate}}</div>
+      <div class="review-text">551 87 78 76</div>
+      <div class="subtitle">{{'email' | translate}}</div>
+      <div class="review-text">{{'Jana.giorgashvili@gmail.com'}}</div>
+
+    </div>
+    <div class="home-buttons" *ngIf="!notSubmitted">
+      <button mat-raised-button (click)="onSubmittedButton()" color="accent" >Home</button>
+      <button mat-button (click)="onSubmittedButton()" color="accent" >Info</button>
+    </div>
+  </div>
+</div>
+
+<app-footer *ngIf="notSubmitted" width="570px" (backEvent)="onBack()" (nextEvent)="onSubmit()" [nextText]="'book'" [zeroOpacity]="true"></app-footer>

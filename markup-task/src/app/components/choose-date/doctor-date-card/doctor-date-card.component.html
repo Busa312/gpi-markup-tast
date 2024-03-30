@@ -1,0 +1,23 @@
+<section class="card-container">
+  <div class="doctor-info flex ai-c">
+    <div class="image"></div>
+    <div class="info-text">
+      <div class="name-text flex ai-c"><span class="name">{{getNameLocal(doctor)}}</span><span class="specialization">
+        {{doctor.subtitle | translate}}</span></div>
+      <div class="address flex ai-c">
+        <div class="icon">
+          <mat-icon>location_on</mat-icon>
+        </div>
+        <div class="address-text">{{isEn? address.addressEn : address.address}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="time-slots">
+    <div class="slot flex ai-c jc-c" [class.clicked-slot]="checkClicked(slot)" (click)="onTimeSlotClick(slot)" *ngFor="let slot of doctor.timeSlotsByDays[day+'']">{{slot}}
+    <div *ngIf="checkClicked(slot)" class="top-check flex jc-c ai-c">
+      <mat-icon class="done-icon">done</mat-icon>
+    </div>
+    </div>
+  </div>
+</section>

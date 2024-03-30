@@ -1,0 +1,21 @@
+.radio-buttons {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+
+.customer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radio-button-group {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.suffix {
+  margin-right: 10px;
+}

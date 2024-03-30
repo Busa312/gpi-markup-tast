@@ -1,0 +1,87 @@
+.card-container {
+  width: 100%;
+  box-shadow: 0 5px 15px #E9E8EF80;
+  border: 1px solid #DEE0E8;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 16px;
+
+  .separator {
+    width: 100%;
+    border: dashed 1px #F0F0F0;
+    margin-bottom: 16px;
+  }
+
+  .doctor-info {
+    gap: 24px;
+    margin-bottom: 16px;
+
+    .name-text {
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+      .name  {
+        font-size: 14px;
+        padding-right: 16px;
+        color: #292562;
+        text-decoration: underline;
+      }
+      .specialization {
+        color: #ED1C7C;
+      }
+    }
+
+
+
+    .image {
+      min-width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background-color: #9199B4;
+    }
+
+
+    .address {
+      max-width: 450px;
+    }
+  }
+
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    .slot {
+      background-color: #F4F4FE;
+      border-radius: 8px;
+      width: 110px;
+      height: 38px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+.clicked-slot {
+  position: relative;
+  border: 1px solid #ED1C7C;
+  background-color: white !important;
+  color: #ED1C7C;
+
+  .top-check {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: #ED1C7C solid 1px;
+    background: white;
+    z-index: 10;
+
+    .done-icon {
+      transform: scale(0.6);
+      margin-left: -2px;
+    }
+  }
+}

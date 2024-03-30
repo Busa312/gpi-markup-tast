@@ -1,0 +1,51 @@
+header {
+  padding: 20px 68px;
+  @media screen and (max-width: 980px) {
+    padding: 20px 8px;
+  }
+  box-shadow: 0 0 6px #1616161A;
+  img {
+    width: 118px;
+  }
+
+  .left-side {
+    gap: 20px;
+    @media screen and (max-width: 980px) {
+      gap: 8px;
+    }
+    .lang-icon {
+      svg {
+        margin-top: 5px;
+      }
+      :hover {
+        cursor: pointer;
+      }
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      background: #F4F6FE;
+      border-radius: 50%;
+      img {
+        width: 24px;
+      }
+    }
+
+    .lang-text {
+      font-size: 14px;
+      padding-right: 16px;
+      border-right: solid 1px #002B7F;
+    }
+
+    .user {
+      gap: 10px;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+

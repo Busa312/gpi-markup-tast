@@ -1,0 +1,64 @@
+<div class="stepper-container">
+  <app-stepper *ngIf="stepper" [stepper]="stepper"></app-stepper>
+</div>
+<div>
+  <div class="inner-container" #container>
+    <div class="title">{{'appointmentFor' | translate}}</div>
+
+    <div class="radio-button-group">
+      <mat-radio-group class="radio-buttons" [(ngModel)]="forMe">
+        <div class="radio-button-container" [class.active]="forMe === forMeOrOtherTypes.ForMe"
+        (click)="forMe = forMeOrOtherTypes.ForMe">
+          <mat-radio-button [value]="forMeOrOtherTypes.ForMe">{{'forMe' | translate}}</mat-radio-button>
+        </div>
+        <div class="radio-button-container" [class.active]="forMe === forMeOrOtherTypes.ForOther"
+             (click)="forMe = forMeOrOtherTypes.ForOther">
+          <mat-radio-button [value]="forMeOrOtherTypes.ForOther">{{'forOther' | translate}}</mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </div>
+
+    <div *ngIf="forMe === forMeOrOtherTypes.ForMe; else forOther">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'enterInsuranceNumber' | translate}}</mat-label>
+        <input matInput>
+        <span class="suffix" matSuffix >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <path id="Path_6611" data-name="Path 6611" d="M13.888,11.713A7.321,7.321,0,0,0,12.08,1.365,7.693,7.693,0,0,0,1.5,3.135,7.321,7.321,0,0,0,3.313,13.482a7.726,7.726,0,0,0,8.242.333l3.816,3.7a1.612,1.612,0,0,0,2.244.056,1.53,1.53,0,0,0,.058-2.2c-.019-.02-.038-.038-.058-.057Zm-6.2.507A4.842,4.842,0,0,1,2.8,7.435,4.841,4.841,0,0,1,7.688,2.646a4.841,4.841,0,0,1,4.893,4.778,4.842,4.842,0,0,1-4.886,4.8Zm0,0" transform="translate(-0.109 0)" fill="#dee0e8"/>
+          </svg>
+        </span>
+      </mat-form-field>
+    </div>
+    <ng-template #forOther>
+      <p class="subtitle">{{'enterInfoOfPerson' | translate}}</p>
+      <div class="for-other-info">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'identificationNumber' | translate}}</mat-label>
+          <input matInput [(ngModel)]="identificationNumber" (ngModelChange)="checkCustomer()">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>{{'birthDate' | translate}}</mat-label>
+          <input matInput [(ngModel)]="birthDate" (ngModelChange)="checkCustomer()">
+        </mat-form-field>
+      </div>
+    </ng-template>
+    <p class="subtitle">{{'chooseForAppointment' | translate}}</p>
+    <div>
+      <mat-radio-group  class="customer-container" [(ngModel)]="activeCustomer">
+        <div class="radio-button-container" (click)="activeCustomer = item.id" *ngFor="let item of customers" [class.active]="activeCustomer === item.id">
+          <mat-radio-button [value]="item.id">
+            <div class="radio-label">
+              <h3>{{isEn? item.nameEn: item.name}}</h3>
+              <div class="radio-subtitle">
+                {{item.insuranceNumber}}
+              </div>
+            </div>
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </div>
+  </div>
+</div>
+<app-footer [zeroOpacity]="footerZeroOpacity" [width]="'570px'" (nextEvent)="next()" [disableBack]="true" [disableNext]="activeCustomer < 1"></app-footer>
+
+

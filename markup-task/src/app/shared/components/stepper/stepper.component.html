@@ -1,0 +1,8 @@
+<div [style.max-width]="stepper.maxWidth+'px'" class="stepper">
+  <div [class.pointer]="isConfirmed(item)" [routerLink]="isConfirmed(item)?item.url:null"
+       *ngFor="let item of stepItems; let idx = index" class="step-item"
+       [style.width]="'calc(100% / ' + stepItems.length + ')'" [class.confirmed-step]="isConfirmed(item)"
+       [class.active-step]="item.active">
+    <span (click)="onIconClick(item)" class="step-icon">{{idx + 1}}</span>
+  </div>
+</div>

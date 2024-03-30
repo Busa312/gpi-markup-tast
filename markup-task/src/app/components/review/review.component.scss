@@ -1,0 +1,78 @@
+.subtitle {
+  color: #9199B4;
+  font-size: 13px;
+}
+
+.review-text {
+  color: #292562;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.address {
+  .review-text {
+    margin-bottom: 0;
+  }
+  margin-bottom: 16px;
+}
+
+.visit {
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.visit-icon {
+  background-color: #FEEEF5;
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+}
+
+.visit-slot {
+  color: #ED1C7C;
+  font-size: 16px;
+}
+
+.separator {
+  width: 100%;
+  border: dashed 1px #F0F0F0;
+  margin-bottom: 16px;
+}
+
+.submitted {
+  margin-top: 64px;
+
+  .submit-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #22A3361A;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  .main-text {
+    color: #292562;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .sub-text {
+    color: #535081;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}
+
+.home-buttons {
+  margin-top: 16px;
+  button {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+

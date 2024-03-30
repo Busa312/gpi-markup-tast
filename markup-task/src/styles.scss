@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+
+  &.dir-col {
+    flex-direction: column;
+  }
+
+  &.jc-sb {
+    justify-content: space-between;
+  }
+
+  &.jc-c {
+    justify-content: center;
+  }
+
+  &.ai-c {
+    align-items: center;
+  }
+}
+
+.inner-container {
+  max-width: 600px;
+  padding: 0 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  &>div {
+   width: 100%;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: 26px;
+    color: #292562;
+    font-weight: bold;
+    margin-bottom: 32px;
+    width: fit-content;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    align-self: flex-start;
+  }
+}
+
+.search-input {
+  .mat-mdc-text-field-wrapper {
+    background-color: #2925620A;
+    border: none;
+  }
+}
+
+.stepper-container {
+  padding: 24px 0 32px;
+}
+
+.mdc-label {
+  font-size: 16px !important;
+  color: #292562;
+  font-weight: 500;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.container {
+  gap: 20px
+}
+
+.radio-button-container {
+  flex: 1;
+  padding: 16px 20px;
+  border: solid 1px #B1B7CA;
+  border-radius: 8px;
+}
+
+.active {
+  border: solid 1px #292562;
+  box-shadow: 0 5px 15px #B9CCDB4D;
+}
+
+.radio-label {
+  font-size: 14px;
+  h3 {
+    color: #292562;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .radio-subtitle {
+    color: #9199B4;
+
+  }
+
+}
+
+@media screen and (max-width: 970px) {
+
+  .mdc-radio, .mdc-checkbox, .no-mobile {
+    display: none !important;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Noto Sans Georgian", sans-serif !important; color: #292562}
